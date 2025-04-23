@@ -11,6 +11,8 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ChartPie, BarChartBig, LineChart } from 'lucide-react';
 import AdaptationPieChart from '@/components/charts/AdaptationPieChart';
+import EmissionsLineChart from '@/components/charts/EmissionsLineChart';
+import EconomicBarChart from '@/components/charts/EconomicBarChart';
 
 const Index = () => {
   const [selectedCountry, setSelectedCountry] = useState('Global');
@@ -93,7 +95,7 @@ const Index = () => {
                 <h2 className="text-xl font-semibold text-sage-900 mb-4 text-center">
                   Economic Impact by Crop Type
                 </h2>
-                <div id="bar-chart" className="h-[500px] w-full" />
+                <EconomicBarChart selectedCountry={selectedCountry} />
               </Card>
             </TabsContent>
 
@@ -102,7 +104,7 @@ const Index = () => {
                 <h2 className="text-xl font-semibold text-sage-900 mb-4 text-center">
                   CO₂ Emissions Over Time
                 </h2>
-                <div id="line-chart" className="h-[500px] w-full" />
+                <EmissionsLineChart selectedCountry={selectedCountry} />
               </Card>
             </TabsContent>
           </div>
