@@ -1,4 +1,8 @@
-# Welcome to your Lovable project
+# Welcome to your Lovable project 
+
+(This vibe coding has a lot of problem to fix lmao)
+- fork from [https://github.com/fauzan-arift/gkv-project1-kelompok1-k3](https://github.com/fauzan-arift/gkv-project1-kelompok1-k3)
+- this is will not be continued, since i don't understand React. But sure, it's amazing to see how good Lovable is.
 
 ## Project info
 
