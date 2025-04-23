@@ -56,7 +56,7 @@ const AdaptationPieChart = ({ selectedCountry }: AdaptationPieChartProps) => {
     };
 
     loadData();
-  }, []); // Run once on mount
+  }, [selectedCountry]); // Run once on mount
 
   useEffect(() => {
     if (dataRef.current) {
@@ -105,7 +105,7 @@ const AdaptationPieChart = ({ selectedCountry }: AdaptationPieChartProps) => {
       displayModeBar: false
     };
 
-    Plotly.newPlot(chartRef.current, [trace as any], layout, config);
+    Plotly.newPlot(chartRef.current, [trace], layout, config);
   };
 
   return <div ref={chartRef} id="pie-chart" className="h-[500px] w-full" />;
