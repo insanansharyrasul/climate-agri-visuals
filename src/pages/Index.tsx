@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card } from "@/components/ui/card";
 import {
@@ -11,6 +10,7 @@ import {
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ChartPie, BarChartBig, LineChart } from 'lucide-react';
+import AdaptationPieChart from '@/components/charts/AdaptationPieChart';
 
 const Index = () => {
   const [selectedCountry, setSelectedCountry] = useState('Global');
@@ -18,7 +18,6 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-sage-50 to-cream-50 p-6 md:p-8">
       <div className="max-w-7xl mx-auto space-y-8">
-        {/* Header Section */}
         <div className="text-center space-y-4">
           <h1 className="text-3xl md:text-4xl font-bold text-sage-900 animate-fade-in">
             Climate Change Impact on Agriculture Analysis
@@ -40,7 +39,6 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Country Selection */}
         <div className="w-full max-w-xs mx-auto animate-fade-in">
           <Select onValueChange={setSelectedCountry} defaultValue={selectedCountry}>
             <SelectTrigger className="w-full bg-white/80 backdrop-blur-sm border border-sage-200 text-sage-900">
@@ -64,7 +62,6 @@ const Index = () => {
           </Select>
         </div>
 
-        {/* Charts Section */}
         <Tabs defaultValue="adaptation" className="w-full animate-fade-in">
           <TabsList className="w-full max-w-2xl mx-auto grid grid-cols-3 bg-white/50 backdrop-blur-sm">
             <TabsTrigger value="adaptation" className="data-[state=active]:bg-sage-600 data-[state=active]:text-white">
@@ -87,7 +84,7 @@ const Index = () => {
                 <h2 className="text-xl font-semibold text-sage-900 mb-4 text-center">
                   Adaptation Strategies Distribution
                 </h2>
-                <div id="pie-chart" className="h-[500px] w-full" />
+                <AdaptationPieChart selectedCountry={selectedCountry} />
               </Card>
             </TabsContent>
 
